@@ -15,7 +15,7 @@ public class MainManager : MonoBehaviour
 
     //Fields for display the player info
     public Text CurrentPlayerName;
-    public Text BestPlayerName;
+    public Text BestPlayerNameAndScore;
 
     public GameObject GameOverText;
 
@@ -103,7 +103,7 @@ public class MainManager : MonoBehaviour
             BestPlayer = PlayerDataHandle.Instance.PlayerName;
             BestScore = CurrentScore;
 
-            BestPlayerName.text = $"Best Score - {BestPlayer}: {BestScore}";
+            BestPlayerNameAndScore.text = $"Best Score - {BestPlayer}: {BestScore}";
 
             SaveGameRank(BestPlayer, BestScore);
         }
@@ -113,11 +113,11 @@ public class MainManager : MonoBehaviour
     {
         if (BestPlayer == null && BestScore == 0)
         {
-            BestPlayerName.text = "";
+            BestPlayerNameAndScore.text = "";
         }
         else
         {
-            BestPlayerName.text = $"Best Score - {BestPlayer}: {BestScore}";
+            BestPlayerNameAndScore.text = $"Best Score - {BestPlayer}: {BestScore}";
         }
 
     }
